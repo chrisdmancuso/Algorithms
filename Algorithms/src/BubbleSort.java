@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class BubbleSort {
     //Bubble Sort function
-    public static void sort(int arr[]) {
+    public static void sort(int[] arr) {
         int n = arr.length;
 
         for (int i = 0; i < n - 1; i++) {
@@ -20,7 +20,7 @@ public class BubbleSort {
     }
 
     //Function to print sorted array
-    static void printArray(int arr[]) {
+    static void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -31,7 +31,7 @@ public class BubbleSort {
     static int[] randomArray(int size) {
         Random rd = new Random();
 
-        int arr[] = new int[size];
+        int[] arr = new int[size];
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rd.nextInt(100);
@@ -47,16 +47,13 @@ public class BubbleSort {
             System.out.println("Invalid input. Please enter an integer: ");
             scanner.nextLine();
         }
-        int size = scanner.nextInt();
 
-        return size;
+        return scanner.nextInt();
     }
 
     //Main method
     //Create new instance of BubbleSort class. Call userInput and pass as parameter to sort() bubbleSort
-    public static void main(String args[]) {
-        BubbleSort bubbleSort = new BubbleSort();
-        int size = userInput();
-        bubbleSort.sort(randomArray(size));
+    public static void main(String[] args) {
+        sort(randomArray(userInput()));
     }
 }
